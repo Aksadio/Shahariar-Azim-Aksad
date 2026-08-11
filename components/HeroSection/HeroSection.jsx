@@ -45,7 +45,12 @@ const HeroSection = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    document.body.style.overflow = "hidden";
+    const isMobileDevice =
+  window.matchMedia("(max-width: 768px)").matches;
+
+if (!isMobileDevice) {
+  document.body.style.overflow = "hidden";
+}
 
     const headingChars = headingRef.current.querySelectorAll(".hero-char");
     const headingFrontChars =
@@ -101,10 +106,16 @@ const HeroSection = () => {
     // On touch devices we keep the gyroscope-driven motion, but soften the
     // movement so the hero still feels stable on phones.
     const initParallax = async () => {
-      if (typeof window === "undefined" || !sectionRef.current) return;
-      const isTouch =
-        window.matchMedia("(hover: none), (pointer: coarse)").matches ||
-        window.innerWidth < 1024;
+  if (typeof window === "undefined" || !sectionRef.current) return;
+
+  const isTouch =
+    window.matchMedia("(hover: none), (pointer: coarse)").matches ||
+    window.innerWidth < 1024;
+
+  // Disable parallax on mobile/tablet so touch scrolling stays smooth
+  if (isTouch) {
+    return;
+  }
       try {
         const mod = await import("parallax-js");
         const Parallax = mod.default || mod;
@@ -131,10 +142,14 @@ const HeroSection = () => {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        setLoaderDone(true);
-        document.body.style.overflow = "";
-        initParallax();
-      },
+  setLoaderDone(true);
+
+  if (window.innerWidth > 768) {
+    document.body.style.overflow = "";
+  }
+
+  initParallax();
+},
     });
 
     const counter = { value: 0 };
