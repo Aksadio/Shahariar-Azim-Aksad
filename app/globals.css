@@ -270,6 +270,11 @@ html {
   object-fit: cover;
 }
 
+/* Normal AKSAD stays behind the portrait */
+#hero-heading {
+  z-index: 5 !important;
+}
+
 #hero-stroke-1 {
   position: absolute;
   top: 65%;
@@ -339,21 +344,35 @@ html {
   pointer-events: none;
 }
 
-#hero-heading {
-  color: var(--color-text);
+/* Foreground duplicate of AKSAD — only the S sits above the portrait */
+#hero-heading-front {
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 22vw;
   font-family: var(--font-inter), 'Inter', sans-serif;
-  z-index: 5;
   font-weight: 600;
   letter-spacing: -0.07em;
   text-transform: uppercase;
   pointer-events: none;
   white-space: nowrap;
   line-height: 0.9;
+  z-index: 15;
+}
+
+/* Hide every character of the foreground duplicate */
+#hero-heading-front .hero-char {
+  color: transparent !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+}
+
+/* Show only the S as an outline above the portrait */
+#hero-heading-front .hero-char:nth-child(3) {
+  color: transparent !important;
+  -webkit-text-stroke: 2px var(--color-text) !important;
+  text-stroke: 2px var(--color-text) !important;
 }
 
 /* ── PROJECTS SECTION ── */
@@ -1162,6 +1181,19 @@ html {
     text-align: center;
   }
 
+  /* Foreground S must use the same mobile position/size as AKSAD */
+  #hero-heading-front {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    font-size: clamp(3.5rem, 15vw, 6.5rem);
+    letter-spacing: 0.01em;
+    line-height: 0.92;
+    white-space: normal;
+    text-align: center;
+  }
+
   #hero-stroke-1 {
     top: 68%;
     left: 3%;
@@ -1315,6 +1347,14 @@ html {
 
 @media (max-width: 480px) {
   #hero-heading {
+    font-size: clamp(3rem, 17vw, 5.5rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 94%;
+  }
+
+  #hero-heading-front {
     font-size: clamp(3rem, 17vw, 5.5rem);
     top: 50%;
     left: 50%;
@@ -1484,6 +1524,10 @@ html {
     font-size: clamp(2.75rem, 17vw, 4.5rem);
   }
 
+  #hero-heading-front {
+    font-size: clamp(2.75rem, 17vw, 4.5rem);
+  }
+
   #ct-headline {
     font-size: clamp(2.6rem, 24vw, 5.5rem);
   }
@@ -1523,4 +1567,3 @@ html {
     transform: none;
   }
 }
-
