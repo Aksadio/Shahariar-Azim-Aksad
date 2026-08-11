@@ -34,6 +34,7 @@ const HeroSection = () => {
   const sectionRef = useRef(null);
   const imgRef = useRef(null);
   const headingRef = useRef(null);
+  const headingFrontRef = useRef(null);
   const loaderRef = useRef(null);
   const loaderCounterRef = useRef(null);
   const stroke1Ref = useRef(null);
@@ -47,11 +48,17 @@ const HeroSection = () => {
     document.body.style.overflow = "hidden";
 
     const headingChars = headingRef.current.querySelectorAll(".hero-char");
+    const headingFrontChars =
+      headingFrontRef.current.querySelectorAll(".hero-char");
 
     // Hide hero elements initially
     gsap.set(headingChars, { autoAlpha: 0, y: 100 });
+    gsap.set(headingFrontChars, { autoAlpha: 0, y: 100 });
     gsap.set(imgRef.current, { autoAlpha: 0, y: "50%", scale: 0.8 });
-    gsap.set([stroke1Ref.current, stroke2Ref.current], { autoAlpha: 0, width: "0%" });
+    gsap.set([stroke1Ref.current, stroke2Ref.current], {
+      autoAlpha: 0,
+      width: "0%",
+    });
     gsap.set(endLineRef.current, { autoAlpha: 0 });
 
     // Breaker line: invisible at the top of the page, fades in as the user
@@ -62,7 +69,10 @@ const HeroSection = () => {
       start: "top top",
       end: "+=300",
       scrub: true,
-      animation: gsap.to(endLineRef.current, { autoAlpha: 1, ease: "none" }),
+      animation: gsap.to(endLineRef.current, {
+        autoAlpha: 1,
+        ease: "none",
+      }),
     });
 
     // iOS 13+ requires explicit permission to receive deviceorientation events.
@@ -81,7 +91,10 @@ const HeroSection = () => {
       window.removeEventListener("touchstart", handleFirstGesture);
       window.removeEventListener("click", handleFirstGesture);
     };
-    window.addEventListener("touchstart", handleFirstGesture, { once: true, passive: true });
+    window.addEventListener("touchstart", handleFirstGesture, {
+      once: true,
+      passive: true,
+    });
     window.addEventListener("click", handleFirstGesture, { once: true });
 
     // Initialize wagerfield/parallax (parallax-js) after GSAP reveal finishes.
@@ -127,67 +140,111 @@ const HeroSection = () => {
     const counter = { value: 0 };
 
     // Loader counter: 0 → 100
-    tl.to(counter, {
-      value: 100,
-      duration: 2,
-      ease: "power2.inOut",
-      onUpdate: () => {
-        if (loaderCounterRef.current) {
-          loaderCounterRef.current.innerText = `${Math.floor(counter.value)}`;
-        }
+    tl.to(
+      counter,
+      {
+        value: 100,
+        duration: 2,
+        ease: "power2.inOut",
+        onUpdate: () => {
+          if (loaderCounterRef.current) {
+            loaderCounterRef.current.innerText = `${Math.floor(counter.value)}`;
+          }
+        },
       },
-    }, "anim");
+      "anim"
+    );
 
     // Loader slide up
-    tl.to(loaderRef.current, {
-      y: "-100%",
-      duration: 1.8,
-      ease: "power3.out",
-    }, "anim+=2.2");
+    tl.to(
+      loaderRef.current,
+      {
+        y: "-100%",
+        duration: 1.8,
+        ease: "power3.out",
+      },
+      "anim+=2.2"
+    );
 
     // Counter fade out
-    tl.to(loaderCounterRef.current, {
-      autoAlpha: 0,
-      duration: 1,
-      ease: "power2.out",
-    }, "anim+=2");
+    tl.to(
+      loaderCounterRef.current,
+      {
+        autoAlpha: 0,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "anim+=2"
+    );
 
     // Heading chars animation
-    tl.to(headingChars, {
-      autoAlpha: 1,
-      y: 0,
-      stagger: {
-        amount: 0.5,
-        from: "start",
+    tl.to(
+      headingChars,
+      {
+        autoAlpha: 1,
+        y: 0,
+        stagger: {
+          amount: 0.5,
+          from: "start",
+        },
+        duration: 1,
+        ease: "power3.out",
       },
-      duration: 1,
-      ease: "power3.out",
-    }, "anim+=3.2");
+      "anim+=3.2"
+    );
+
+    // Foreground duplicate animation
+    tl.to(
+      headingFrontChars,
+      {
+        autoAlpha: 1,
+        y: 0,
+        stagger: {
+          amount: 0.5,
+          from: "start",
+        },
+        duration: 1,
+        ease: "power3.out",
+      },
+      "anim+=3.2"
+    );
 
     // Image animation
-    tl.to(imgRef.current, {
-      autoAlpha: 1,
-      y: 0,
-      scale: 1,
-      duration: 1,
-      ease: "sine.out",
-    }, "anim+=4.2");
+    tl.to(
+      imgRef.current,
+      {
+        autoAlpha: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: "sine.out",
+      },
+      "anim+=4.2"
+    );
 
     // Stroke 2 animation (right side, slightly earlier)
-    tl.to(stroke2Ref.current, {
-      autoAlpha: 1,
-      width: stroke2Width,
-      duration: 1,
-      ease: "power2.out",
-    }, "anim+=4.3");
+    tl.to(
+      stroke2Ref.current,
+      {
+        autoAlpha: 1,
+        width: stroke2Width,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "anim+=4.3"
+    );
 
     // Stroke 1 animation (left side)
-    tl.to(stroke1Ref.current, {
-      autoAlpha: 1,
-      width: stroke1Width,
-      duration: 1,
-      ease: "power2.out",
-    }, "anim+=4.5");
+    tl.to(
+      stroke1Ref.current,
+      {
+        autoAlpha: 1,
+        width: stroke1Width,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "anim+=4.5"
+    );
 
     return () => {
       tl.kill();
@@ -243,23 +300,27 @@ const HeroSection = () => {
         </div>
 
         {/* Heading text — behind portrait */}
-<div className="hero-layer" data-depth="0.10" style={{ zIndex: 5 }}>
-  <div id="hero-heading" ref={headingRef}>
-    <SplitChars text="AKSAD" />
-  </div>
-</div>
-
-{/* Foreground S — above portrait */}
-<div className="hero-layer" data-depth="0.10" style={{ zIndex: 15 }}>
-  <div id="hero-heading-front">
-    <span>S</span>
-  </div>
-</div>
+        <div className="hero-layer" data-depth="0.10" style={{ zIndex: 5 }}>
+          <div id="hero-heading" ref={headingRef}>
+            <SplitChars text="AKSAD" />
+          </div>
+        </div>
 
         {/* Portrait image (foreground, moves more) */}
         <div className="hero-layer" data-depth="0.50" style={{ zIndex: 5 }}>
           <div id="hero-img" ref={imgRef}>
-            <img src={`${BASE_PATH}/Portfolio_Img-4.png`} alt="" draggable="false" />
+            <img
+              src={`${BASE_PATH}/Portfolio_Img-4.png`}
+              alt=""
+              draggable="false"
+            />
+          </div>
+        </div>
+
+        {/* Foreground duplicate — only S is visible above the portrait */}
+        <div className="hero-layer" data-depth="0.10" style={{ zIndex: 15 }}>
+          <div id="hero-heading-front" ref={headingFrontRef}>
+            <SplitChars text="AKSAD" />
           </div>
         </div>
 
