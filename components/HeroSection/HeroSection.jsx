@@ -243,14 +243,14 @@ const HeroSection = () => {
         </div>
 
         {/* Heading text (deepest, moves least) */}
-        <div className="hero-layer" data-depth="0.10" style={{ zIndex: 5 }}>
+        <div className="hero-layer" data-depth="0.10" style={{ zIndex: 15 }}>
           <div id="hero-heading" ref={headingRef}>
             <SplitChars text="AKSAD" />
           </div>
         </div>
 
         {/* Portrait image (foreground, moves more) */}
-        <div className="hero-layer" data-depth="0.50" style={{ zIndex: 10 }}>
+        <div className="hero-layer" data-depth="0.50" style={{ zIndex: 5 }}>
           <div id="hero-img" ref={imgRef}>
             <img src={`${BASE_PATH}/Portfolio_Img-4.png`} alt="" draggable="false" />
           </div>
