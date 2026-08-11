@@ -264,9 +264,11 @@ const HeroSection = () => {
   return (
     <>
       {/* Loader */}
-      <div id="loader" ref={loaderRef}>
-        <div id="loader-counter" ref={loaderCounterRef}>0</div>
-      </div>
+      {!loaderDone && (
+  <div id="loader" ref={loaderRef}>
+    <div id="loader-counter" ref={loaderCounterRef}>0</div>
+  </div>
+)}
 
       {/* Hero — direct children of #hero-section are parallax layers.
           Each layer's `data-depth` controls how much it moves with the cursor. */}
