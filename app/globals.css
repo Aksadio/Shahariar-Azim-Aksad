@@ -272,6 +272,19 @@ html {
 
 /* Normal AKSAD stays behind the portrait */
 #hero-heading {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22vw;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 0.9;
   z-index: 5 !important;
 }
 
