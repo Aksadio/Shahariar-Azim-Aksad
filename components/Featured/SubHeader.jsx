@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const SERVICES = [
   {
@@ -39,7 +39,11 @@ const SubHeader = () => {
 
         <div className='w-full md:w-1/2 flex justify-center md:justify-end'>
           <div className='relative w-[60%] md:w-[75%] aspect-[4/5] rounded-2xl overflow-hidden'>
-            <Image src="/AboutPhoto.png" alt="Shahariar Azim Aksad" fill className="object-cover" />
+            <img
+              src={`${BASE_PATH}/AboutPhoto.png`}
+              alt="Shahariar Azim Aksad"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
