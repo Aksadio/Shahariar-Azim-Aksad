@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const SERVICES = [
   {
@@ -26,15 +27,22 @@ const SERVICES = [
 const SubHeader = () => {
   return (
     <div className='relative md:absolute md:top-1/5 left-0 md:left-1/2 w-full md:-translate-x-1/2 md:mt-40 z-10 flex flex-col md:items-start items-center px-5 md:px-0'>
-      <div className='w-full md:w-1/2 text-base md:text-2xl flex flex-col gap-3 md:gap-4 leading-relaxed md:leading-snug text-center md:text-left'>
-        <p>
-          Shahariar Azim Aksad is a self-taught developer and AI automation builder based in Bangladesh, exploring where code, AI agents, and no-code tools meet.
-        </p>
-        <p>
-          He works across Python, n8n, and the Gemini API to build practical tools and AI-powered systems — from small automations to standalone apps.
-        </p>
-      </div>
+      <div className='w-full flex flex-col md:flex-row md:items-center gap-8 md:gap-10'>
+        <div className='w-full md:w-1/2 text-base md:text-2xl flex flex-col gap-3 md:gap-4 leading-relaxed md:leading-snug text-center md:text-left'>
+          <p>
+            Shahariar Azim Aksad is a self-taught developer and AI automation builder based in Bangladesh, exploring where code, AI agents, and no-code tools meet.
+          </p>
+          <p>
+            He works across Python, n8n, and the Gemini API to build practical tools and AI-powered systems — from small automations to standalone apps.
+          </p>
+        </div>
 
+        <div className='w-full md:w-1/2 flex justify-center md:justify-end'>
+          <div className='relative w-[60%] md:w-[75%] aspect-[4/5] rounded-2xl overflow-hidden'>
+            <Image src="/AboutPhoto.png" alt="Shahariar Azim Aksad" fill className="object-cover" />
+          </div>
+        </div>
+      </div>
       <div className='about-inline-services w-full md:w-1/2 mt-8 md:mt-12 h-auto md:h-[36vh]'>
         <div className='about-inline-services__head'>
           <span className='about-inline-services__label'>SERVICES</span>
