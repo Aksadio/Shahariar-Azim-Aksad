@@ -87,7 +87,7 @@ export default function Home() {
         >
           <Skiggle />
           <Header />
-          <FeaturedVideo refForward={ref} />
+          
           <SubHeader />
         </div>
 
