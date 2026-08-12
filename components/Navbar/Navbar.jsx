@@ -119,6 +119,7 @@ function Navbar() {
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!mobileOpen}
+        style={{ touchAction: mobileOpen ? "auto" : "none", visibility: mobileOpen ? "visible" : "hidden" }}
       >
         <div
           className="absolute inset-0 bg-bg"
