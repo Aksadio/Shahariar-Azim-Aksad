@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import Image from "next/image";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const FeaturedVideo = ({refForward, ...props }) => {
   const ref = useRef(null);
@@ -29,13 +29,10 @@ const FeaturedVideo = ({refForward, ...props }) => {
       className="relative md:absolute mx-auto md:mx-0 mt-4 md:mt-0 md:top-[55vh] md:left-20 md:translate-x-0 md:translate-y-0 z-30 w-[82vw] md:w-[40vw] max-w-[22rem] md:max-w-[856px] aspect-[3/4] md:aspect-[856/1024] overflow-hidden rounded-3xl"
       {...props}
     >
-      <Image
-        src="/Portfolio_Img-4.png"
+     <img
+        src={`${BASE_PATH}/Portfolio_Img-4.png`}
         alt="Featured portrait"
-        fill
-        priority
-        sizes="(max-width: 768px) 80vw, 40vw"
-        className="object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
       />
     </motion.div>
   );
