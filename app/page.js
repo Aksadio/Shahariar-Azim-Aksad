@@ -82,7 +82,7 @@ export default function Home() {
         {/* </div> */}
         <div
           id="about"
-          className="h-auto md:h-[140vh] relative mt-16 md:mt-[10rem] flex flex-col md:block pb-16 md:pb-0 gap-8 md:gap-0"
+          className="h-auto md:h-[190vh] relative mt-16 md:mt-[10rem] flex flex-col md:block pb-16 md:pb-0 gap-8 md:gap-0"
           ref={ref}
         >
           <Skiggle />
