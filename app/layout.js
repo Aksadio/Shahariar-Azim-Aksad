@@ -1,10 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-// Inter is the single typeface used everywhere on the site. Loading it through
-// next/font exposes a CSS variable (`--font-inter`) we can reference from any
-// global CSS rule, while `inter.className` applies it as the default font on
-// the body so every component inherits it automatically.
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -14,17 +10,13 @@ const inter = Inter({
 
 export const metadata = {
   title: 'AKSAD',
-  description: 'Portfolio of Shahariar Azim Aksad — developer and AI automation builder.',
+  description:
+    'Portfolio of Shahariar Azim Aksad — developer and AI automation builder.',
   icons: {
     icon: '/icon.png',
   },
 }
 
-// Tiny script that runs synchronously before the body paints. It reads the
-// theme the user previously picked from localStorage and applies the
-// corresponding `data-theme` attribute on the <html> element. Without this,
-// the page would flash the default light theme for one frame on every reload
-// when the user is using dark mode. Default is light when nothing is saved.
 const themeBootstrap = `
 (function () {
   try {
@@ -35,16 +27,22 @@ const themeBootstrap = `
     document.documentElement.dataset.theme = 'dark';
   }
 })();
-`;
+`
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable} data-theme="dark">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
+        <link rel="icon" href="/icon.png" />
+        <script
+          dangerouslySetInnerHTML={{ __html: themeBootstrap }}
+        />
       </head>
-      <body className={inter.className}>{children}</body>
+
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   )
 }
