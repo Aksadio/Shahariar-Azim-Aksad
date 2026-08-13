@@ -15,20 +15,20 @@ const SmoothScroll = ({ children }) => {
       (window.matchMedia("(hover: none), (pointer: coarse)").matches ||
         window.innerWidth < 1024);
 
+    // Touch/mobile e Lenis skip kore native scroll use korchi — Lenis +
+    // GSAP ScrollTrigger pin (HorizontalScroll) combo mobile e swipe
+    // scroll register korte deyna, joto khon na JS diye scrollTo call kora hoy.
+    if (isTouch) {
+      ScrollTrigger.refresh();
+      return;
+    }
+
     const lenis = new Lenis({
-      duration: isTouch ? 1.0 : 1.5,
+      duration: 1.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-      // On touch devices, native scrolling feels best — disable Lenis touch
-      // smoothing and let the browser handle inertial scrolling natively.
-      smoothTouch: false,
-      touchMultiplier: isTouch ? 1.5 : 0.25,
+      autoRaf: false,
     });
 
-    // Expose the active Lenis instance globally so other components (e.g. the
-    // navbar menu) can request smooth scroll-to-section animations through
-    // the same engine that's already running. Falling back to native
-    // window.scrollTo would fight Lenis and feel jumpy.
     if (typeof window !== "undefined") {
       window.__lenis = lenis;
     }
