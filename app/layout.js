@@ -34,7 +34,6 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.variable} data-theme="dark">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/icon.png" />
         <script
           dangerouslySetInnerHTML={{ __html: themeBootstrap }}
         />
