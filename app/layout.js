@@ -29,17 +29,17 @@ const themeBootstrap = `
 (function () {
   try {
     var saved = localStorage.getItem('theme');
-    var theme = saved === 'dark' ? 'dark' : 'light';
+    var theme = saved === 'light' ? 'light' : 'dark';
     document.documentElement.dataset.theme = theme;
   } catch (e) {
-    document.documentElement.dataset.theme = 'light';
+    document.documentElement.dataset.theme = 'dark';
   }
 })();
 `;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.variable} data-theme="light">
+    <html lang="en" className={inter.variable} data-theme="dark">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
