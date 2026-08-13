@@ -53,7 +53,7 @@ const MoonIcon = () => (
 // script in `app/layout.js` sets on first paint), and persists the user's
 // choice to localStorage so it survives reloads.
 const ThemeButton = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
