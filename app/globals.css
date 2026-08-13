@@ -59,8 +59,10 @@
   user-drag: none;
 }
 
-html, body {
-  overscroll-behavior: none;
+html {
+  overscroll-behavior-y: contain;
+}
+body {
   overflow-x: hidden;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
