@@ -21,14 +21,6 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Build
-
-```bash
-npm run build
-```
-
 Deployed automatically to GitHub Pages via GitHub Actions on every push to `main`.
 
 ## Contact
