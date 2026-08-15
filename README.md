@@ -15,12 +15,6 @@ Personal portfolio website of Shahariar Azim Aksad — a self-taught developer a
 - **Utilities**: Lenis (smooth scrolling), Parallax.js
 
 ## Development
-
-```bash
-npm install
-npm run dev
-```
-
 Deployed automatically to GitHub Pages via GitHub Actions on every push to `main`.
 
 ## Contact
