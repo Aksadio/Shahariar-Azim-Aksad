@@ -38,14 +38,14 @@ const SubHeader = () => {
         </div>
 
         <div className='w-full md:w-1/2 flex justify-center md:justify-end'>
-          <div className='relative w-[60%] md:w-[75%] aspect-[4/5] rounded-2xl overflow-hidden'>
-            <img
-              src={`${BASE_PATH}/AboutPhoto.png`}
-              alt="Shahariar Azim Aksad"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
-        </div>
+  <div className='relative w-[60%] md:w-[75%] rounded-2xl'>
+    <img
+      src={`${BASE_PATH}/AboutPhoto.png`}
+      alt="Shahariar Azim Aksad"
+      className="block w-full h-auto object-contain"
+    />
+  </div>
+</div>
       </div>
       <div className='about-inline-services w-full md:w-1/2 mt-8 md:mt-12 h-auto md:h-[36vh]'>
         <div className='about-inline-services__head'>
