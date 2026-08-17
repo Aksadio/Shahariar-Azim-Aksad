@@ -38,7 +38,7 @@ const SubHeader = () => {
         </div>
 
         <div className='w-full md:w-1/2 flex justify-center md:justify-end'>
-  <div className='relative w-[60%] md:w-[75%] rounded-2xl'>
+  <div className='relative w-[75%] md:w-[95%] rounded-2xl'>
     <img
       src={`${BASE_PATH}/AboutPhoto.png`}
       alt="Shahariar Azim Aksad"
