@@ -251,8 +251,8 @@ html {
 }
 #hero-img {
   position: absolute;
-  top: 54%;
-  left: 76%;
+  top: 29%;
+  left: 51%;
   transform: translate(-50%, -50%);
   width: min(34vw, 448px);
   height: auto;
