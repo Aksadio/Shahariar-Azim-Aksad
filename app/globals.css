@@ -251,14 +251,13 @@ html {
 }
 #hero-img {
   position: absolute;
-  top: 29%;
+  top: 35%;
   left: 51%;
   transform: translate(-50%, -50%);
   width: min(42vw, 600px);
   height: auto;
   z-index: 10;
 }
-
 #hero-img img {
   display: block;
   width: 100%;
