@@ -254,7 +254,7 @@ html {
   top: 29%;
   left: 51%;
   transform: translate(-50%, -50%);
-  width: min(34vw, 448px);
+  width: min(42vw, 600px);
   height: auto;
   z-index: 10;
 }
