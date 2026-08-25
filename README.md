@@ -4,15 +4,8 @@ Personal portfolio website of Shahariar Azim Aksad — a self-taught developer a
 
 ## Live Site
 
-[aksadio.github.io/my-portfolio](https://aksadio.github.io/Shahariar-Azim-Aksad/)
+[my-portfolio](https://aksadio.github.io/Shahariar-Azim-Aksad/)
 
-## Tech Stack
-
-- **Framework**: Next.js 14 (static export)
-- **3D Graphics**: React Three Fiber, React Three Drei
-- **Animations**: GSAP, Framer Motion, React Spring
-- **Styling**: Tailwind CSS
-- **Utilities**: Lenis (smooth scrolling), Parallax.js
 
 ## Development
 Deployed automatically to GitHub Pages via GitHub Actions on every push to `main`.
