@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable} data-theme="dark">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="RCGti8KqrdMB-rFoGLOlpAXyg9eD7MDu7JccXZsHUrc" />
         <script
           dangerouslySetInnerHTML={{ __html: themeBootstrap }}
         />
