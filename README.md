@@ -4,7 +4,7 @@ Personal portfolio website of Shahariar Azim Aksad — a self-taught developer a
 
 ## Live Site
 
-[aksadio.github.io/my-portfolio](https://aksadio.github.io/my-portfolio/)
+[aksadio.github.io/my-portfolio](https://aksadio.github.io/Shahariar-Azim-Aksad/)
 
 ## Tech Stack
 
