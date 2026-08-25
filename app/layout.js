@@ -9,9 +9,9 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'AKSAD',
+  title: 'Shahariar Azim Aksad — Developer & AI Automation Builder',
   description:
-    'Portfolio of Shahariar Azim Aksad — developer and AI automation builder.',
+    'Portfolio of Shahariar Azim Aksad — developer and AI automation builder based in Bangladesh.',
   icons: {
     icon: '/icon.png',
   },
@@ -29,11 +29,53 @@ const themeBootstrap = `
 })();
 `
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Shahariar Azim Aksad',
+  url: 'https://aksadio.github.io/Shahariar-Azim-Aksad/',
+  image: 'https://aksadio.github.io/Shahariar-Azim-Aksad/AboutPhoto.png',
+  jobTitle: 'Developer & AI Automation Builder',
+  description:
+    'Shahariar Azim Aksad is a self-taught developer and AI automation builder based in Bangladesh.',
+  knowsAbout: [
+    'Python',
+    'AI Automation',
+    'Artificial Intelligence',
+    'Web Development',
+    'Software Development',
+    'Prompt Engineering',
+    'APIs',
+    'No-code Automation',
+  ],
+  sameAs: [
+    'https://github.com/Aksadio',
+    'https://www.linkedin.com/in/shahariar-azim-aksad-69aaaa3b8/',
+    'https://www.instagram.com/aksad.dev.io/',
+    'https://x.com/Aksad_0',
+    'https://t.me/Aksad_dev_io',
+    'https://www.kaggle.com/shahariarazimaksad',
+    'https://profile.edx.org/u/Aksadio',
+    'https://www.credential.net/profile/shahariarazimaksad43941/wallet',
+  ],
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable} data-theme="dark">
       <head>
-        <meta name="google-site-verification" content="RCGti8KqrdMB-rFoGLOlpAXyg9eD7MDu7JccXZsHUrc" />
+        <meta
+          name="google-site-verification"
+          content="RCGti8KqrdMB-rFoGLOlpAXyg9eD7MDu7JccXZsHUrc"
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
+
         <script
           dangerouslySetInnerHTML={{ __html: themeBootstrap }}
         />
