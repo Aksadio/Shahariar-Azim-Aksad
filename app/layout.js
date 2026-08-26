@@ -64,10 +64,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable} data-theme="dark">
       <head>
-        <meta
-          name="google-site-verification"
-          content="RCGti8KqrdMB-rFoGLOlpAXyg9eD7MDu7JccXZsHUrc"
-        />
+        <meta name="google-site-verification" content="SecYoPnqmizup0fdYZx9KHIj2z1R48W7V0E2Rvpv2kI" />
 
         <script
           type="application/ld+json"
