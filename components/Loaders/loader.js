@@ -73,7 +73,7 @@ function onBufferLoad(buffer) {
     material = new THREE.MeshStandardMaterial({ color: '#181818' });
     mesh = new THREE.Mesh(geometry, material);
   } else if (meshType === "LineSegments") {
-    material = new THREE.LineBasicMaterial({color: '#181818' });
+    material = new THREE.LineBasicMaterial({color: '#13201D' });
     mesh = new THREE.LineSegments(geometry, material);
   } else {
     material = new THREE.PointsMaterial({
