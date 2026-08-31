@@ -7,7 +7,7 @@ import LiquidEther from "../LiquidEther/LiquidEther";
 
 // Module-level constant so the array reference stays stable across renders
 // (otherwise LiquidEther's useEffect would tear down/rebuild WebGL each render).
-const HERO_LIQUID_COLORS = ["#D9E6FF"];
+const HERO_LIQUID_COLORS = ["#B7C9B1"];
 
 // GitHub Pages serves this site from a subpath (e.g. /my-portfolio), so
 // plain <img src="/..."> tags need the basePath prefixed manually —
