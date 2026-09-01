@@ -54,6 +54,12 @@ const GithubIcon = () => (
   </Icon>
 );
 
+const GoogleIcon = () => (
+  <Icon>
+    <path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12s3.36-7.27 7.19-7.27c3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.19 2C6.42 2 2.03 6.8 2.03 12s4.39 10 10.16 10c5.5 0 9.87-3.86 9.87-9.57 0-1.15-.15-1.9-.15-1.9z" />
+  </Icon>
+);
+
 const SiteFooter = () => {
   return (
     <footer id="main-footer">
@@ -65,7 +71,7 @@ const SiteFooter = () => {
             I build systems that think.
           </p>
           <div className="f-socials">
-            <a
+            
               href="https://www.instagram.com/aksad.dev.io/"
               target="_blank"
               rel="noreferrer"
@@ -73,15 +79,15 @@ const SiteFooter = () => {
             >
               <InstagramIcon />
             </a>
-            <a
+            
               href="https://g.dev/Aksadio"
               target="_blank"
               rel="noreferrer"
               aria-label="Google Developer Profile"
             >
-              <GooleIcon />
+              <GoogleIcon />
             </a>
-            <a
+            
               href="https://t.me/Aksad_dev_io"
               target="_blank"
               rel="noreferrer"
@@ -89,7 +95,7 @@ const SiteFooter = () => {
             >
               <TelegramIcon />
             </a>
-            <a
+            
               href="https://www.linkedin.com/in/shahariar-azim-aksad-69aaaa3b8/"
               target="_blank"
               rel="noreferrer"
@@ -97,7 +103,7 @@ const SiteFooter = () => {
             >
               <LinkedinIcon />
             </a>
-            <a
+            
               href="https://github.com/Aksadio"
               target="_blank"
               rel="noreferrer"
@@ -118,7 +124,7 @@ const SiteFooter = () => {
             <a href="mailto:aksad.dev.io@gmail.com">
               aksad.dev.io@gmail.com
             </a>
-            <a
+            
               href="https://wa.me/8801616880684"
               target="_blank"
               rel="noreferrer"
