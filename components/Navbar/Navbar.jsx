@@ -106,7 +106,7 @@ function Navbar() {
             }}
           >
             <animated.div className="text-[0.55rem] leading-none" style={rotate}>
-              {mobileOpen ? "✕" : "⬤ ⬤"}
+              {mobileOpen ? "𝕏" : "⬤ ⬤"}
             </animated.div>
           </button>
         </div>
