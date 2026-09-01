@@ -30,10 +30,10 @@ const SubHeader = () => {
       <div className='w-full flex flex-col md:flex-row md:items-center gap-8 md:gap-10'>
         <div className='w-full md:w-1/2 text-base md:text-2xl flex flex-col gap-3 md:gap-4 leading-relaxed md:leading-snug text-center md:text-left'>
           <p>
-            Shahariar Azim Aksad is a self-taught developer and AI automation builder based in Bangladesh, exploring where code, AI agents, and no-code tools meet.
+            I.m Shahariar Azim Aksad. I'm a self-taught developer and AI automation builder based in Bangladesh, exploring where code, AI , and no-code tools meet.
           </p>
           <p>
-            He works across Python, n8n, and the Gemini API to build practical tools and AI-powered systems — from small automations to standalone apps.
+            I works across Python, n8n, and the Gemini API to build practical tools and AI-powered systems — from small automations to standalone apps.
           </p>
         </div>
 
