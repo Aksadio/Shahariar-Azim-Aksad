@@ -61,8 +61,8 @@ const SiteFooter = () => {
         <div className="footer-brand">
           <h1 className="f-logo">AKSAD</h1>
           <p className="f-desc">
-            Aksad builds more than digital design. <br />
-            He builds systems that think.
+            I build more than digital design. <br />
+            I build systems that think.
           </p>
           <div className="f-socials">
             <a
@@ -74,12 +74,12 @@ const SiteFooter = () => {
               <InstagramIcon />
             </a>
             <a
-              href="https://x.com/Aksad_0"
+              href="https://g.dev/Aksadio"
               target="_blank"
               rel="noreferrer"
-              aria-label="X (Twitter)"
+              aria-label="Google Developer Profile"
             >
-              <XIcon />
+              <GooleIcon />
             </a>
             <a
               href="https://t.me/Aksad_dev_io"
@@ -132,8 +132,8 @@ const SiteFooter = () => {
             <a href="https://www.kaggle.com/shahariarazimaksad" target="_blank" rel="noreferrer">
               Kaggle
             </a>
-            <a href="https://profile.edx.org/u/Aksadio" target="_blank" rel="noreferrer">
-              edX
+            <a href="https://g.dev/Aksadio" target="_blank" rel="noreferrer">
+              Google Developer Profile
             </a>
             <a href="https://www.credential.net/profile/shahariarazimaksad43941/wallet" target="_blank" rel="noreferrer">
               Credentials
