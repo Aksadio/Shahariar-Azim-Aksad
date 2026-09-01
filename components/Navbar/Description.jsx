@@ -13,7 +13,7 @@ const Description = () => {
       <div className="pt-20 pb-6 lg:hidden">
         <div className="text-3xl text-fg font-extrabold leading-7">
           <Trail open={open}>
-            <span>We build epic realtime</span>
+            <span>I build epic realtime</span>
             <span>interactive experience to</span>
             <span>blow people's minds</span>
           </Trail>
