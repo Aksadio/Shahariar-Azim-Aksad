@@ -45,9 +45,11 @@ const PROJECTS = [
 
 
 // GIF Arrow
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const ArrowIcon = () => (
   <img
-    src="/arrow.gif"
+    src={`${BASE_PATH}/arrow.gif`}
     alt=""
     width="100%"
     height="100%"
@@ -59,7 +61,6 @@ const ArrowIcon = () => (
     }}
   />
 );
-
 
 const Row = ({ item, index }) => {
   const hasLink = Boolean(item.href);
