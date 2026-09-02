@@ -29,7 +29,6 @@ const PROJECTS = [
     kind: "Web",
     note: "A restricted-access terminal with a 3D animated login dashboard.",
   },
-  
   {
     name: "QR",
     href: "https://qr-8jqu.onrender.com/",
@@ -44,27 +43,34 @@ const PROJECTS = [
   },
 ];
 
+
+// GIF Arrow
 const ArrowIcon = () => (
-  <svg
-    viewBox="0 0 24 24"
+  <img
+    src="/arrow.gif"
+    alt=""
     width="100%"
     height="100%"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M7 17 17 7" />
-    <path d="M8 7h9v9" />
-  </svg>
+    style={{
+      display: "block",
+      width: "100%",
+      height: "100%",
+      objectFit: "contain",
+    }}
+  />
 );
+
 
 const Row = ({ item, index }) => {
   const hasLink = Boolean(item.href);
   const Wrapper = hasLink ? "a" : "div";
+
   const wrapperProps = hasLink
-    ? { href: item.href, target: "_blank", rel: "noreferrer" }
+    ? {
+        href: item.href,
+        target: "_blank",
+        rel: "noreferrer",
+      }
     : {};
 
   return (
@@ -73,30 +79,49 @@ const Row = ({ item, index }) => {
         className={`pj-link${hasLink ? "" : " pj-link--static"}`}
         {...wrapperProps}
       >
-        <span className="pj-num">{String(index + 1).padStart(2, "0")}</span>
+        <span className="pj-num">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
         <div className="pj-meta">
           <span className="pj-name">{item.name}</span>
-          {item.role && <span className="pj-role">{item.role}</span>}
-          {item.note && <span className="pj-note">{item.note}</span>}
+
+          {item.role && (
+            <span className="pj-role">{item.role}</span>
+          )}
+
+          {item.note && (
+            <span className="pj-note">{item.note}</span>
+          )}
         </div>
+
         <span className="pj-kind">{item.kind}</span>
+
         <span className="pj-arrow" aria-hidden="true">
-          {hasLink ? <ArrowIcon /> : <span className="pj-dot">•</span>}
+          {hasLink ? (
+            <ArrowIcon />
+          ) : (
+            <span className="pj-dot">•</span>
+          )}
         </span>
       </Wrapper>
     </li>
   );
 };
 
+
 const Projects = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      const rows = sectionRef.current.querySelectorAll(".pj-row");
+      const rows =
+        sectionRef.current.querySelectorAll(".pj-row");
+
       gsap.from(rows, {
         opacity: 0,
         y: 60,
@@ -110,7 +135,9 @@ const Projects = () => {
         },
       });
 
-      const titles = sectionRef.current.querySelectorAll(".pj-title");
+      const titles =
+        sectionRef.current.querySelectorAll(".pj-title");
+
       gsap.from(titles, {
         opacity: 0,
         y: 40,
@@ -137,7 +164,11 @@ const Projects = () => {
 
       <ul className="pj-list">
         {PROJECTS.map((p, i) => (
-          <Row key={p.name} item={p} index={i} />
+          <Row
+            key={p.name}
+            item={p}
+            index={i}
+          />
         ))}
       </ul>
     </section>
