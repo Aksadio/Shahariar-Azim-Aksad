@@ -1,21 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    THEME TOKENS
-
-   Every color that should adapt to light / dark mode is defined here as a
-   CSS custom property. The default (`:root`) values match the original
-   light palette of the site, so the look is unchanged when no theme is
-   set. `[data-theme="dark"]` overrides those values to produce the dark
-   variant. The theme is applied by setting `data-theme="dark"` on the
-   <html> element (see `app/layout.js` and the theme toggle button).
-
-   Keeping every theme decision in one block makes it easy to tweak the
-   palette later — we never have to chase hex values through the rest of
-   the stylesheet.
    ───────────────────────────────────────────────────────────────────────── */
 
 :root,
@@ -51,6 +42,10 @@
   --color-btn-light-text: #F1E9D2;
   --color-btn-sm-bg: #243B35;
 }
+
+
+/* ── GLOBAL ── */
+
 * {
   user-select: none;
   -webkit-user-select: none;
@@ -60,29 +55,24 @@
 
 html {
   overscroll-behavior-y: contain;
+  scrollbar-width: none;
 }
+
 body {
   overflow-x: hidden;
   width: 100%;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  /* Site-wide font family — Inter, matching the hero headline. The hero,
-     slogan, subscribe headings and footer logo each apply their own
-     `font-weight: 600` + `letter-spacing: -0.07em` at the element level, so
-     the headline look stays consistent. We deliberately do NOT set those
-     globally on the body, because cascading semibold + -7% tracking onto
-     every paragraph, button and small UI label makes body copy feel heavy
-     and lets characters overlap. */
   font-family: var(--font-inter), 'Inter', sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
-  /* Smooth color crossfade when the user toggles themes. Limited to color
-     properties so it doesn't accidentally animate layout-affecting things. */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-img, svg, video {
+img,
+svg,
+video {
   pointer-events: none;
   max-width: 100%;
 }
@@ -92,41 +82,50 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-html {
-  scrollbar-width: none;
+
+/* ── NAV BUTTONS ── */
+
+.nav_btn_lg {
+  @apply rounded-full px-5 h-10 font-[600] text-sm mx-2 font-AeonikMedium;
 }
 
-.nav_btn_lg{
-  @apply rounded-full px-5 h-10 font-[600] text-sm mx-2 font-AeonikMedium
-}
-.nav_btn_dark{
+.nav_btn_dark {
   background-color: var(--color-btn-dark-bg);
   color: var(--color-btn-dark-text);
 }
-.nav_btn_light{
+
+.nav_btn_light {
   color: var(--color-btn-light-text);
   background-color: var(--color-btn-light-bg);
 }
 
-.nav_btn_sm{
+.nav_btn_sm {
   @apply rounded-full w-10 h-10 mx-2;
   background-color: var(--color-btn-sm-bg);
   color: var(--color-btn-light-text);
 }
 
-@font-face{
+
+/* ── FONTS ── */
+
+@font-face {
   font-family: "Aeonik";
   src: url('/fonts/Aeonik/Aeonik-Regular.otf') format('opentype');
 }
-@font-face{
+
+@font-face {
   font-family: "AeonikBold";
   src: url('/fonts/Aeonik/Aeonik-Bold.otf') format('opentype');
 }
-@font-face{
+
+@font-face {
   font-family: "AeonikMedium";
   src: url('/fonts/Aeonik/Aeonik-Medium.otf') format('opentype');
 }
- 
+
+
+/* ── CAROUSEL ── */
+
 .container {
   margin: 0 auto;
   width: 250px;
@@ -161,26 +160,32 @@ html {
   transform: rotateX(0deg) translateZ(250px);
   background: #ed1c24;
 }
+
 .b {
   transform: rotateX(60deg) translateZ(250px);
   background: #0072bc;
 }
+
 .c {
   transform: rotateX(120deg) translateZ(250px);
   background: #39b54a;
 }
+
 .d {
   transform: rotateX(180deg) translateZ(250px);
   background: #f26522;
 }
+
 .e {
   transform: rotateX(240deg) translateZ(250px);
   background: #630460;
-} 
+}
+
 .f {
   transform: rotateX(300deg) translateZ(250px);
   background: #8c6239;
 }
+
 
 /* ── LOADER ── */
 
@@ -207,6 +212,7 @@ html {
   pointer-events: none;
 }
 
+
 /* ── HERO SECTION ── */
 
 #hero-section {
@@ -217,9 +223,6 @@ html {
   background-color: var(--color-bg);
 }
 
-/* Parallax layer wrappers — direct children of #hero-section.
-   Each fills the hero so inner absolute children keep their original
-   centering. parallax-js applies translate3d() transforms on these. */
 .hero-layer {
   position: absolute;
   top: 0;
@@ -230,10 +233,6 @@ html {
   will-change: transform;
 }
 
-/* Animated fluid background layer (LiquidEther). Sits beneath all
-   parallax layers (which start at z-index 4). Pointer events are
-   disabled because the fluid simulation listens for mouse moves on
-   `window` directly and uses the container rect for hit-testing. */
 #hero-bg-fluid {
   position: absolute;
   inset: 0;
@@ -244,10 +243,10 @@ html {
   opacity: 0.25;
 }
 
-/* End-of-hero indicator line */
 .hero-end-line {
   display: none;
 }
+
 #hero-img {
   position: absolute;
   top: 67%;
@@ -257,6 +256,7 @@ html {
   height: auto;
   z-index: 10;
 }
+
 #hero-img img {
   display: block;
   width: 100%;
@@ -264,7 +264,6 @@ html {
   object-fit: contain;
 }
 
-/* Normal AKSAD stays behind the portrait */
 #hero-heading {
   position: absolute;
   top: 45%;
@@ -290,7 +289,6 @@ html {
   width: 22vw;
   height: 32vh;
   pointer-events: none;
-  /* ABOVE the heading text */
   z-index: 11;
   overflow: hidden;
 }
@@ -299,7 +297,6 @@ html {
   width: 22vw;
   height: 100%;
   object-fit: cover;
-  /* Use mask + background-color to get exact #D9E6FF */
   visibility: hidden;
 }
 
@@ -325,7 +322,6 @@ html {
   height: 26vh;
   transform: rotateY(180deg);
   pointer-events: none;
-  /* UNDER the heading text */
   z-index: 4;
   overflow: hidden;
 }
@@ -351,7 +347,6 @@ html {
   pointer-events: none;
 }
 
-/* Foreground duplicate of AKSAD — only the S sits above the portrait */
 #hero-heading-front {
   position: absolute;
   top: 45%;
@@ -368,19 +363,18 @@ html {
   z-index: 15;
 }
 
-/* Hide every character of the foreground duplicate */
 #hero-heading-front .hero-char {
   color: transparent !important;
   -webkit-text-stroke: 0 !important;
   text-stroke: 0 !important;
 }
 
-/* Show only the S as an outline above the portrait */
 #hero-heading-front .hero-char:nth-child(3) {
   color: transparent !important;
   -webkit-text-stroke: 2px var(--color-text) !important;
   text-stroke: 2px var(--color-text) !important;
 }
+
 
 /* ── PROJECTS SECTION ── */
 
@@ -621,14 +615,26 @@ html {
   justify-content: center;
   width: 3vw;
   height: 3vw;
+  flex-shrink: 0;
   transition: transform 0.4s ease;
+}
+
+.pj-arrow img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .pj-link:hover .pj-arrow {
   transform: translate(0.6vw, -0.6vw);
 }
 
+
+/* ── PROJECTS RESPONSIVE ── */
+
 @media (max-width: 1024px) {
+
   .about-inline-services__head {
     padding-bottom: 1.8vw;
     margin-bottom: 2.8vw;
@@ -716,59 +722,10 @@ html {
   }
 }
 
-@media (max-width: 480px) {
-  .about-inline-services__label {
-    font-size: 3vw;
-  }
-
-  .about-inline-services__item h4 {
-    font-size: 6.8vw;
-  }
-
-  .about-inline-services__item p {
-    font-size: 3.2vw;
-    line-height: 1.5;
-  }
-
-  .pj-label {
-    font-size: 3vw;
-  }
-
-  .pj-title {
-    font-size: 11vw;
-  }
-
-  .pj-num {
-    font-size: 3.2vw;
-  }
-
-  .pj-name {
-    font-size: 7.5vw;
-  }
-
-  .pj-role {
-    font-size: 3vw;
-  }
-
-  .pj-note {
-    font-size: 3vw;
-  }
-
-  .pj-arrow {
-    width: 8vw;
-    height: 8vw;
-  }
-}
 
 /* ── HORIZONTAL SCROLL SECTION ── */
 
 .Horizontal {
-  /* Height is intentionally `auto` — ScrollTrigger.pin wraps `.hs-sticky` in
-     a pin-spacer whose height equals the pin distance + viewport, and that
-     spacer needs to grow this section's box so subsequent sections (Subscribe
-     → footer) are pushed down by exactly that amount. A fixed height here
-     would clamp the section to one viewport and let the footer slide in
-     before the animation is finished. */
   position: relative;
   width: 100%;
   height: auto;
@@ -812,7 +769,6 @@ html {
   will-change: transform;
 }
 
-/* ── FEATURED HEADER (Beyond Visions / Within Reach) ── */
 .featured-header {
   font-size: 9rem;
   line-height: 1;
@@ -835,6 +791,7 @@ html {
     font-size: 2.25rem;
   }
 }
+
 
 /* ── CONTACT SECTION ── */
 
@@ -918,8 +875,11 @@ html {
   font-weight: 600;
   letter-spacing: 0.22em;
   cursor: pointer;
-  transition: background-color 0.4s ease, color 0.4s ease,
-    border-color 0.4s ease, transform 0.3s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.3s ease;
   white-space: nowrap;
 }
 
@@ -960,6 +920,7 @@ html {
   transform: translate(2px, -2px);
 }
 
+
 /* ── FOOTER ── */
 
 #main-footer {
@@ -970,8 +931,6 @@ html {
   display: flex;
   flex-direction: column;
   font-family: var(--font-inter), 'Inter', sans-serif;
-  /* Sits above the GradualBlur overlay (zIndex 99999 in app/page.js)
-     so the blur effect never visually covers the footer. */
   z-index: 100000;
   position: relative;
 }
@@ -1010,6 +969,11 @@ html {
   letter-spacing: -0.01em;
 }
 
+
+/* ─────────────────────────────────────────────
+   SOCIAL GIF ICONS
+   ───────────────────────────────────────────── */
+
 .f-socials {
   display: flex;
   gap: 1vw;
@@ -1019,6 +983,8 @@ html {
 .f-socials a {
   width: 3vw;
   height: 3vw;
+  min-width: 32px;
+  min-height: 32px;
   border-radius: 50%;
   border: 1.5px solid var(--color-border);
   display: flex;
@@ -1026,14 +992,38 @@ html {
   justify-content: center;
   color: var(--color-text);
   text-decoration: none;
-  transition: all 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    transform 0.4s ease,
+    border-color 0.4s ease;
   background-color: var(--color-bg-alt);
+  overflow: hidden;
 }
+
+
+/* GIF itself */
+
+.social-gif {
+  display: block;
+  width: 78%;
+  height: 78%;
+  max-width: none;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+/* Social hover */
 
 .f-socials a:hover {
   background-color: var(--color-accent-soft);
   transform: translateY(-0.4vw);
 }
+
+
+/* ── FOOTER LINKS ── */
 
 .footer-links {
   display: flex;
@@ -1114,11 +1104,20 @@ html {
   color: var(--color-text);
 }
 
-/* ── MOBILE / TABLET ── */
+
+/* ── TABLET ── */
+
 @media (max-width: 1024px) {
-  /* Contact — slightly larger eyebrow / button text on tablet */
-  #ct-eyebrow { font-size: 1.4vw; letter-spacing: 0.2em; }
-  #ct-email { font-size: 2vw; }
+
+  #ct-eyebrow {
+    font-size: 1.4vw;
+    letter-spacing: 0.2em;
+  }
+
+  #ct-email {
+    font-size: 2vw;
+  }
+
   #ct-btn,
   #ct-btn-secondary {
     height: 6vh;
@@ -1127,24 +1126,56 @@ html {
     padding: 0 3vw;
   }
 
-  /* Footer — tablet font scaling */
-  .f-logo { font-size: 7vw; }
-  .f-desc { font-size: 1.5vw; }
-  .f-col h3 { font-size: 1.5vw; }
-  .f-col a { font-size: 1.4vw; }
-  .footer-bottom { font-size: 1.2vw; }
-  .f-socials a { width: 4vw; height: 4vw; }
+
+  /* Footer */
+
+  .f-logo {
+    font-size: 7vw;
+  }
+
+  .f-desc {
+    font-size: 1.5vw;
+  }
+
+  .f-col h3 {
+    font-size: 1.5vw;
+  }
+
+  .f-col a {
+    font-size: 1.4vw;
+  }
+
+  .footer-bottom {
+    font-size: 1.2vw;
+  }
+
+  .f-socials a {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  .social-gif {
+    width: 78%;
+    height: 78%;
+  }
 }
 
+
+/* ── MOBILE / TABLET ── */
+
 @media (max-width: 768px) {
-  /* Loader — tablet size */
+
+  /* Loader */
+
   #loader-counter {
     font-size: 13vw;
     padding-right: 6.5vw;
     padding-bottom: 11vw;
   }
 
-  /* Hero — tablet sizing */
+
+  /* Hero */
+
   #hero-section {
     height: 100svh;
     min-height: 100svh;
@@ -1155,22 +1186,22 @@ html {
   }
 
   #hero-img {
-  position: absolute;
-  top: 54%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(76vw, 28rem);
-  max-width: 76vw;
-  height: auto;
-  z-index: 10;
-}
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(76vw, 28rem);
+    max-width: 76vw;
+    height: auto;
+    z-index: 10;
+  }
 
-#hero-img img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+  #hero-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 
   #hero-heading {
     top: 50%;
@@ -1188,7 +1219,6 @@ html {
     text-align: center;
   }
 
-  /* Foreground S must use the same mobile position/size as AKSAD */
   #hero-heading-front {
     top: 50%;
     left: 50%;
@@ -1223,14 +1253,18 @@ html {
     width: 26vw;
   }
 
-  /* Horizontal scroll — tablet heading scaling */
+
+  /* Horizontal scroll */
+
   .Horizontal .heading-xl {
     font-size: clamp(2.2rem, 14vw, 5rem);
     line-height: 1.05;
     padding: 0 4vw;
   }
 
-  /* Contact section — tablet sizing */
+
+  /* Contact */
+
   #contact-section {
     height: auto;
     min-height: 70vh;
@@ -1279,7 +1313,9 @@ html {
     height: 16px;
   }
 
+
   /* Footer */
+
   #main-footer {
     padding: 8vw 6vw 6vw 6vw;
   }
@@ -1319,6 +1355,11 @@ html {
     max-height: 48px;
   }
 
+  .social-gif {
+    width: 78%;
+    height: 78%;
+  }
+
   .footer-links {
     gap: 10vw;
     flex-wrap: wrap;
@@ -1352,7 +1393,11 @@ html {
   }
 }
 
+
+/* ── SMALL MOBILE ── */
+
 @media (max-width: 480px) {
+
   #hero-heading {
     font-size: clamp(3rem, 17vw, 5.5rem);
     top: 50%;
@@ -1370,10 +1415,10 @@ html {
   }
 
   #hero-img {
-  top: 56%;
-  width: min(82vw, 22rem);
-  height: auto;
-}
+    top: 56%;
+    width: min(82vw, 22rem);
+    height: auto;
+  }
 
   #hero-stroke-1 {
     top: 70%;
@@ -1415,6 +1460,9 @@ html {
     width: 86vw;
   }
 
+
+  /* Footer */
+
   .f-logo {
     font-size: 16vw;
   }
@@ -1422,15 +1470,20 @@ html {
   .footer-bottom {
     font-size: 3.4vw;
   }
+
+  .social-gif {
+    width: 78%;
+    height: 78%;
+  }
 }
 
-/* ── ULTRA-MOBILE (≤ 480px) EXTRA POLISH ──
-   Small-phone adjustments that layer on top of the 768px rules above.
-   Touch targets stay ≥44px, long words break cleanly, and elements
-   never exceed the viewport width. */
+
+/* ── ULTRA-MOBILE ── */
+
 @media (max-width: 480px) {
-  /* Projects — make long names wrap and keep the arrow from being
-     squished against the edge. Give each row a minimum touch height. */
+
+  /* Projects */
+
   #projects-section {
     padding: 20vw 6vw 14vw 6vw;
   }
@@ -1439,7 +1492,6 @@ html {
     gap: 3vw;
     padding: 5vw 0;
     min-height: 56px;
-    align-items: center;
   }
 
   .pj-meta {
@@ -1463,7 +1515,9 @@ html {
     flex-shrink: 0;
   }
 
-  /* About inline services — compact padding on phones */
+
+  /* About */
+
   .about-inline-services__item {
     padding: 5vw 0 !important;
   }
@@ -1477,7 +1531,9 @@ html {
     margin-top: 2.5vw;
   }
 
-  /* Contact spacing — give the stacked layout room to breathe */
+
+  /* Contact */
+
   #contact-section {
     padding: 20vw 6vw 14vw 6vw;
     min-height: auto;
@@ -1495,9 +1551,9 @@ html {
     min-height: 54px;
   }
 
-  /* Footer — tighten column gap so 2 columns fit per row on narrow
-     phones without becoming a single column that creates huge blank
-     vertical space */
+
+  /* Footer */
+
   .footer-links {
     gap: 8vw 6vw;
   }
@@ -1511,9 +1567,9 @@ html {
     word-break: break-word;
   }
 
-  /* Horizontal scroll pin section — height shrinks on tiny viewports so
-     there isn't a huge empty-looking pinned area while the headline
-     horizontally pans across. */
+
+  /* Horizontal */
+
   .Horizontal .hs-sticky {
     height: 70vh;
     min-height: 360px;
@@ -1524,9 +1580,11 @@ html {
   }
 }
 
-/* ── VERY SMALL PHONES (≤ 360px) ──
-   Extra safety net for iPhone SE-class widths so nothing overflows. */
+
+/* ── VERY SMALL PHONES ── */
+
 @media (max-width: 360px) {
+
   #hero-heading {
     font-size: clamp(2.75rem, 17vw, 4.5rem);
   }
@@ -1550,13 +1608,18 @@ html {
   .f-logo {
     font-size: 18vw;
   }
+
+  .social-gif {
+    width: 78%;
+    height: 78%;
+  }
 }
 
-/* ── TOUCH DEVICE HOVER CLEANUP ──
-   Some of the nav/CTA components use :hover for reveal effects. On touch
-   devices those hovers either "stick" after tap or never fire at all, so
-   we disable them here to keep tap feedback consistent. */
+
+/* ── TOUCH DEVICE HOVER CLEANUP ── */
+
 @media (hover: none) and (pointer: coarse) {
+
   .pj-link:hover {
     padding-left: 0;
     color: var(--color-text);
@@ -1571,6 +1634,10 @@ html {
   }
 
   .pj-link:hover .pj-arrow {
+    transform: none;
+  }
+
+  .f-socials a:hover {
     transform: none;
   }
 }
