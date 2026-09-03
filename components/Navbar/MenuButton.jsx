@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { a, useSpring } from "@react-spring/web";
 import Menu from "./Menu";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const MenuButton = () => {
   const [isOpen, open] = useState(false);
   const offset = 10;
@@ -83,7 +85,14 @@ const MenuButton = () => {
         }}
       >
         <div className="flex flex-col h-6 items-center justify-center">
-          <a.div style={menu}>MENU&nbsp;&nbsp;</a.div>
+          <a.div style={menu}>
+  <img
+    src={`${BASE_PATH}/menu.gif`}
+    alt="Menu"
+    style={{ width: "24px", height: "24px", objectFit: "contain" }}
+    draggable="false"
+  />
+</a.div>
           <a.div style={close}>CLOSE&nbsp;&nbsp;</a.div>
         </div>
         <a.div style={dots}>•&nbsp;•</a.div>
