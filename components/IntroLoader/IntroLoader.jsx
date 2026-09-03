@@ -18,7 +18,7 @@ const IntroLoader = ({ onFinish }) => {
       return;
     }
 
-    const totalDuration = 2000; // ms, 1 -> 100
+    const totalDuration = 6000; // ms, 1 -> 100
     const stepTime = totalDuration / 100;
 
     let current = 1;
@@ -64,18 +64,21 @@ const IntroLoader = ({ onFinish }) => {
       />
 
       <div
-        style={{
-          position: "absolute",
-          bottom: "24px",
-          right: "24px",
-          color: "#fff",
-          fontSize: "1.25rem",
-          fontWeight: 600,
-          fontVariantNumeric: "tabular-nums",
-        }}
-      >
-        {count}
-      </div>
+  style={{
+    position: "absolute",
+    bottom: "24px",
+    right: "24px",
+    color: "#fff",
+    fontSize: "20px",
+    fontWeight: 600,
+    fontFamily: "monospace",
+    fontVariantNumeric: "tabular-nums",
+    width: "3ch",
+    textAlign: "right",
+  }}
+>
+  {count}
+     </div>
     </div>
   );
 };
