@@ -77,7 +77,7 @@ const IntroLoader = ({ onFinish }) => {
     textAlign: "right",
   }}
 >
-  {count}
+  {String(count).padStart(3, "0")}
      </div>
     </div>
   );
