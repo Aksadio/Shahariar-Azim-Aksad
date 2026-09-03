@@ -18,7 +18,7 @@ const IntroLoader = ({ onFinish }) => {
       return;
     }
 
-    const totalDuration = 6000; // ms, 1 -> 100
+    const totalDuration = 5000; // ms, 1 -> 100
     const stepTime = totalDuration / 100;
 
     let current = 1;
@@ -69,16 +69,18 @@ const IntroLoader = ({ onFinish }) => {
     bottom: "24px",
     right: "24px",
     color: "#fff",
-    fontSize: "20px",
-    fontWeight: 600,
+    fontSize: "48px",
+    lineHeight: "1",
+    fontWeight: 700,
     fontFamily: "monospace",
     fontVariantNumeric: "tabular-nums",
+    display: "inline-block",
     width: "3ch",
     textAlign: "right",
   }}
 >
   {String(count).padStart(3, "0")}
-     </div>
+</div>
     </div>
   );
 };
