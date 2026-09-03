@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // If any of these change, update them in both places.
 const EMAIL = "aksad.dev.io@gmail.com";
 const WHATSAPP_URL = "https://wa.me/8801616880684";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const ArrowUpRight = () => (
   <svg
@@ -41,8 +41,6 @@ const Contact = () => {
       const eyebrowChars = eyebrowRef.current?.querySelectorAll(".ct-char") ?? [];
       const headlineChars = headlineRef.current?.querySelectorAll(".ct-char") ?? [];
 
-      // Mirror the slogan/Subscribe character-reveal so the contact section
-      // feels like part of the same family of scroll moments.
       gsap.from(eyebrowChars, {
         opacity: 0,
         y: 40,
@@ -103,7 +101,7 @@ const Contact = () => {
         {splitChars("let's talk.")}
       </h2>
 
-      <a
+      
         id="ct-email"
         href={`mailto:${EMAIL}`}
         ref={emailRef}
@@ -114,10 +112,15 @@ const Contact = () => {
 
       <div id="ct-actions" ref={ctaRef}>
         <a id="ct-btn" href={`mailto:${EMAIL}`}>
-          <span>SAY HELLO</span>
+          <img
+            src={`${BASE_PATH}/say_hello.gif`}
+            alt="Say Hello"
+            style={{ width: "28px", height: "28px", objectFit: "contain" }}
+            draggable="false"
+          />
           <ArrowUpRight />
         </a>
-        <a
+        
           id="ct-btn-secondary"
           href={WHATSAPP_URL}
           target="_blank"
