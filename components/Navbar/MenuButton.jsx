@@ -89,7 +89,7 @@ const MenuButton = () => {
   <img
     src={`${BASE_PATH}/menu.gif`}
     alt="Menu"
-    style={{ width: "24px", height: "24px", objectFit: "contain" }}
+    style={{ width: "32px", height: "32px", objectFit: "contain" }}
     draggable="false"
   />
 </a.div>
