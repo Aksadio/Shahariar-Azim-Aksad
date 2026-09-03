@@ -11,7 +11,7 @@ const WelcomeBadge = () => {
         position: "fixed",
         bottom: "16px",
         right: "16px",
-        zIndex: 9998,
+        zIndex: 999999,
         pointerEvents: "none",
       }}
     >
