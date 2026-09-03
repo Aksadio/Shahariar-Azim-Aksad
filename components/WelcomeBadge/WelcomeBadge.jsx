@@ -18,7 +18,7 @@ const WelcomeBadge = () => {
       <img
         src={`${BASE_PATH}/welcome.gif`}
         alt="Welcome"
-        style={{ width: "64px", height: "64px", objectFit: "contain" }}
+        style={{ width: "110px", height: "110px", objectFit: "contain" }}
         draggable="false"
       />
     </div>
