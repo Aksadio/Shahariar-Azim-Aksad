@@ -12,9 +12,9 @@ export const metadata = {
   title: 'Shahariar Azim Aksad — Developer & AI Automation Builder',
   description:
     'Portfolio of Shahariar Azim Aksad — developer and AI automation builder based in Bangladesh.',
-  icons: {
-    icon: '/icon.png',
-  },
+icons: {
+  icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/icon.png`,
+},
 }
 
 const themeBootstrap = `
