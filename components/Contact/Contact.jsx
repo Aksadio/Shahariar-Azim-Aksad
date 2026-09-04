@@ -115,7 +115,12 @@ const Contact = () => {
           <img
             src={`${BASE_PATH}/say_hello.gif`}
             alt="Say Hello"
-            style={{ width: "40px", height: "40px", objectFit: "contain" }}
+            style={{
+  width: "40px",
+  height: "40px",
+  objectFit: "contain",
+  filter: "drop-shadow(0 1px 3px rgba(0,0,0,0.35))",
+}}
             draggable="false"
           />
           <ArrowUpRight />
