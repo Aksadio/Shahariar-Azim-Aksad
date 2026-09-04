@@ -115,7 +115,7 @@ const Contact = () => {
           <img
             src={`${BASE_PATH}/say_hello.gif`}
             alt="Say Hello"
-            style={{ width: "28px", height: "28px", objectFit: "contain" }}
+            style={{ width: "40px", height: "40px", objectFit: "contain" }}
             draggable="false"
           />
           <ArrowUpRight />
