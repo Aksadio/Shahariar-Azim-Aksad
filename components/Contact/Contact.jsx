@@ -101,7 +101,7 @@ const Contact = () => {
         {splitChars("let's talk.")}
       </h2>
 
-      
+      <a
         id="ct-email"
         href={`mailto:${EMAIL}`}
         ref={emailRef}
@@ -120,7 +120,7 @@ const Contact = () => {
           />
           <ArrowUpRight />
         </a>
-        
+        <a
           id="ct-btn-secondary"
           href={WHATSAPP_URL}
           target="_blank"
