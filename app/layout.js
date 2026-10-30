@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata = {
   title: 'Shahariar Azim Aksad — Developer & AI Automation Builder',
   description:
-    'Portfolio of Shahariar Azim Aksad — developer and AI automation builder based in Bangladesh.',
+    'Portfolio of Shahariar Azim Aksad — developer and Intro CyberSecurity based in Bangladesh.',
 icons: {
   icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/icon.png`,
 },
@@ -35,15 +35,15 @@ const personSchema = {
   name: 'Shahariar Azim Aksad',
   url: 'https://aksadio.github.io/Shahariar-Azim-Aksad/',
   image: 'https://aksadio.github.io/Shahariar-Azim-Aksad/AboutPhoto.png',
-  jobTitle: 'Developer & AI Automation Builder',
+  jobTitle: 'Developer & Intro CyberSecurity',
   description:
-    'Shahariar Azim Aksad is a self-taught developer and AI automation builder based in Bangladesh.',
+    'Shahariar Azim Aksad is a self-taught developer and Intro CyberSecurity based in Bangladesh.',
   knowsAbout: [
     'Python',
     'AI Automation',
     'Artificial Intelligence',
     'Web Development',
-    'Software Development',
+    'Intro CyberSecurity',
     'Prompt Engineering',
     'APIs',
     'No-code Automation',
@@ -51,7 +51,7 @@ const personSchema = {
   sameAs: [
     'https://github.com/Aksadio',
     'https://www.linkedin.com/in/shahariar-azim-aksad-69aaaa3b8/',
-    'https://www.instagram.com/aksad.dev.io/',
+    'https://www.instagram.com/aksad.io/',
     'https://x.com/Aksad_0',
     'https://t.me/Aksad_dev_io',
     'https://www.kaggle.com/shahariarazimaksad',
