@@ -29,7 +29,7 @@ const SiteFooter = () => {
 
             {/* Instagram */}
             <a
-              href="https://www.instagram.com/aksad.dev.io/"
+              href="https://www.instagram.com/aksad.io/"
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
