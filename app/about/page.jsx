@@ -4,7 +4,7 @@ import Scene from "@/components/About/Particles/Particles";
 
 const About = () => {
   return (
-    <div className="w-screen h-screen bg-black text-white overflow-hidden relative">
+    <div className="w-screen h-screen bg-[#051F20] text-[#DAF1DE] overflow-hidden relative">
      <Navbar />
       <Scene/>
       <ScrollText />
