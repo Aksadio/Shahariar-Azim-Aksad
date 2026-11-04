@@ -54,8 +54,8 @@ const Skiggle = () => {
           y2="444"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#0016EC" />
-          <stop offset="1" stopColor="#4A83FF" stopOpacity="1" />
+          <stop stopColor="#235347" />
+          <stop offset="1" stopColor="#8EB69B" stopOpacity="1" />
         </linearGradient>
       </defs>
     </svg>
