@@ -32,7 +32,7 @@ export default function Home() {
     console.clear();
     console.log(
       "%cMADE BY AKSAD",
-      "background: #D9E6FF; color: #0f172a; font-size: 16px; font-weight: 800; padding: 10px 16px; border-radius: 10px; letter-spacing: 2px;"
+      "background: #DAF1DE; color: #051F20; font-size: 16px; font-weight: 800; padding: 10px 16px; border-radius: 10px; letter-spacing: 2px;"
     );
   }, []);
 
@@ -69,7 +69,7 @@ export default function Home() {
     <SmoothScroll>
     <Suspense
       fallback={
-        <div className="w-screen bg-black h-screen text-white text-4xl md:text-7xl lg:text-9xl flex items-center justify-center">
+        <div className="w-screen bg-[#051F20] h-screen text-[#DAF1DE] text-4xl md:text-7xl lg:text-9xl flex items-center justify-center">
           Loading...
         </div>
       }
