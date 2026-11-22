@@ -6,8 +6,7 @@ Personal portfolio website of Shahariar Azim Aksad — a self-taught developer a
 
 [Live Site](https://aksadio.github.io/Shahariar-Azim-Aksad/)
 
-
-Deployed automatically to GitHub Pages via GitHub Actions on every push to `main`.
+`main`.
 
 ## Contact
 - Email: aksad.dev.io@gmail.com
